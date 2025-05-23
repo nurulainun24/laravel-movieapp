@@ -45,10 +45,11 @@
                 </div>
             @endif
 
-            <div class="flex justify-end">
-                <a href="{{ route('movies.index') }}" class="mr-2 text-gray-500">Batal</a>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Update</button>
+            <div class="flex justify-end space-x-2">
+                <a href="{{ route('movies.index') }}" class="px-4 py-2 rounded border border-gray-400 text-gray-700 hover:bg-gray-100 transition">Batal</a>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Simpan</button>
             </div>
+            
         </form>
     </div>
 @endsection

@@ -36,7 +36,7 @@ class MovieController extends Controller
 
         Movie::create($validated);
 
-        return redirect()->route('movies.index')->with('success', 'Film berhasil ditambahkan!');
+        return redirect()->route('movies.index')->with('success', 'File berhasil ditambahkan');
     }
 
     public function edit(Movie $movie)
@@ -76,4 +76,26 @@ class MovieController extends Controller
         $movie->delete();
         return redirect()->route('movies.index')->with('success', 'Movie berhasil dihapus.');
     }
+
+    public function like($id)
+    {
+        $movie = Movie::findOrFail($id);
+        $movie->likes += 1;
+        $movie->save();
+    
+        return back();
+    }
+    
+    public function dislike($id)
+    {
+        $movie = Movie::findOrFail($id);
+        $movie->dislikes += 1;
+        $movie->save();
+    
+        return back();
+    }
+    
+
+    
+    
 }
